@@ -1,12 +1,37 @@
 part of 'forgot_password_bloc.dart';
 
-@immutable
-sealed class ForgotPasswordState {}
+enum ForgotPasswordStepEnum {
+  sendEmail(0),
+  enterPinCode(1),
+  resetPassword(2);
 
-final class ForgotPasswordInitial extends ForgotPasswordState {}
+  final int value;
+  const ForgotPasswordStepEnum(this.value);
+}
 
-class ForgotPasswordWithEmail extends ForgotPasswordState {
+class ForgotPasswordState {
+  final ForgotPasswordStepEnum step;
   final String email;
+  final bool isPasswordResetSuccess;
 
-  ForgotPasswordWithEmail(this.email);
+  ForgotPasswordState({
+    required this.step,
+    required this.email,
+    this.isPasswordResetSuccess = false,
+  });
+
+  ForgotPasswordState copyWith({
+    ForgotPasswordStepEnum? step,
+    String? email,
+    bool? isLoading,
+    String? error,
+    bool? isPasswordResetSuccess,
+  }) {
+    return ForgotPasswordState(
+      step: step ?? this.step,
+      email: email ?? this.email,
+      isPasswordResetSuccess:
+          isPasswordResetSuccess ?? this.isPasswordResetSuccess,
+    );
+  }
 }

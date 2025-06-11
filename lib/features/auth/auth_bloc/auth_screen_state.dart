@@ -21,8 +21,4 @@ class AuthScreenInitial extends AuthScreenState {
 
 class AuthSuccess extends AuthScreenState {}
 
-class AuthFailure extends AuthScreenState {
-  final String error;
-
-  AuthFailure(this.error);
-}
+class AuthFailure extends AuthScreenState {}

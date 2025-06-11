@@ -29,4 +29,11 @@ class TextFieldValidator {
     }
     return null;
   }
+
+  static String? required(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Field is required';
+    }
+    return null;
+  }
 }

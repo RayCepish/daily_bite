@@ -10,4 +10,6 @@ class SplashAnimationInProgress extends SplashScreenPageState {
   SplashAnimationInProgress(this.animationValue);
 }
 
+class SplashWaitProfileLoaded extends SplashScreenPageState {}
+
 class SplashAnimationCompleted extends SplashScreenPageState {}

@@ -2,6 +2,7 @@ import 'package:daily_bite/core/widgets/main_layout.dart';
 import 'package:daily_bite/features/auth/auth_bloc/auth_screen_bloc.dart';
 import 'package:daily_bite/features/auth/widgets/login_form.dart';
 import 'package:daily_bite/features/auth/widgets/register_form.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -44,13 +45,7 @@ class _AuthScreenState extends State<AuthScreen>
       child: BlocListener<AuthScreenBloc, AuthScreenState>(
         listener: (context, state) {
           if (state is AuthSuccess) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Success!')),
-            );
-          } else if (state is AuthFailure) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
-            );
+            context.go('/main_page');
           }
         },
         child: BlocBuilder<AuthScreenBloc, AuthScreenState>(
@@ -93,18 +88,37 @@ class _AuthScreenState extends State<AuthScreen>
                           final email = _emailController.text;
                           context.go('/auth/forgot_password', extra: email);
                         },
-                        onTapLogin: () {
-                          context.read<AuthScreenBloc>().add(LoginEvent());
+                        onTapLogin: () async {
+                          context.read<AuthScreenBloc>().add(
+                                LoginEvent(
+                                  password: _passwordController.text,
+                                  email: _emailController.text,
+                                ),
+                              );
                         },
-                        onTapLoginGoogle: () {},
+                        onTapLoginGoogle: () {
+                          context
+                              .read<AuthScreenBloc>()
+                              .add(GoogleLoginEvent());
+                        },
                       ),
                       RegisterForm(
                         nameController: _nameController,
                         emailController: _emailController,
                         passwordController: _passwordController,
-                        onTapRegisterGoogle: () {},
+                        onTapRegisterGoogle: () {
+                          context
+                              .read<AuthScreenBloc>()
+                              .add(GoogleLoginEvent());
+                        },
                         onTapRegister: () {
-                          context.read<AuthScreenBloc>().add(RegisterEvent());
+                          context.read<AuthScreenBloc>().add(
+                                RegisterEvent(
+                                  name: _nameController.text,
+                                  email: _emailController.text,
+                                  password: _passwordController.text,
+                                ),
+                              );
                         },
                       ),
                     ],

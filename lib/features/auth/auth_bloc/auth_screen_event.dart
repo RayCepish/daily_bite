@@ -22,6 +22,29 @@ class UpdateFieldEvent extends AuthScreenEvent {
   });
 }
 
-class LoginEvent extends AuthScreenEvent {}
+class LoginEvent extends AuthScreenEvent {
+  final String email;
+  final String password;
 
-class RegisterEvent extends AuthScreenEvent {}
+  LoginEvent({
+    required this.email,
+    required this.password,
+  });
+}
+
+class RegisterEvent extends AuthScreenEvent {
+  final String? name;
+
+  final String email;
+  final String password;
+
+  RegisterEvent({
+    this.name,
+    required this.email,
+    required this.password,
+  });
+}
+
+class GoogleLoginEvent extends AuthScreenEvent {}
+
+class LogoutEvent extends AuthScreenEvent {}

@@ -1,13 +1,21 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 
 part 'app_event.dart';
 part 'app_state.dart';
 
 class AppBloc extends Bloc<AppEvent, AppState> {
-  AppBloc() : super(AppLoadingState()) {
-    on<AppStartedEvent>(_onAppStarted);
-  }
+  AppBloc() : super(AppState.initial) {
+    on<ShowLoaderEvent>((event, emit) {
+      emit(state.copyWith(isLoading: true));
+    });
 
-  void _onAppStarted(AppStartedEvent event, Emitter<AppState> emit) async {}
+    on<HideLoaderEvent>((event, emit) {
+      emit(state.copyWith(isLoading: false));
+    });
+
+    on<ShowErrorEvent>((event, emit) {
+      emit(state.copyWith(hasError: true));
+    });
+  }
 }

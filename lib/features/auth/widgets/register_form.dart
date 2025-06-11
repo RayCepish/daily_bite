@@ -1,6 +1,5 @@
 import 'package:daily_bite/core/utils/text_field_validators.dart';
 import 'package:daily_bite/core/widgets/buttons/custom_button.dart';
-import 'package:daily_bite/core/widgets/buttons/google_button.dart';
 import 'package:daily_bite/core/widgets/text_fields/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -48,10 +47,10 @@ class RegisterForm extends StatelessWidget {
             text: "Register",
             onPressed: onTapRegister,
           ),
-          const SizedBox(height: 16),
-          GoogleButton(
-            onTap: onTapRegisterGoogle,
-          )
+          // const SizedBox(height: 16),
+          // GoogleButton(
+          //   onTap: onTapRegisterGoogle,
+          // )
         ],
       ),
     );

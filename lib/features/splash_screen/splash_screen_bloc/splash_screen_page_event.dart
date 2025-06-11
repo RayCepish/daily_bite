@@ -4,3 +4,5 @@ part of 'splash_screen_page_bloc.dart';
 abstract class SplashScreenPageEvent {}
 
 class StartAnimationEvent extends SplashScreenPageEvent {}
+
+class WaitForProfileLoadEvent extends SplashScreenPageEvent {}

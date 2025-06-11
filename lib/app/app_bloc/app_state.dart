@@ -1,12 +1,32 @@
 part of 'app_bloc.dart';
 
 @immutable
-sealed class AppState {}
+class AppState {
+  final bool isLoading;
+  final int currentStep;
+  final int totalSteps;
+  final bool hasError;
 
-final class AppInitial extends AppState {}
+  const AppState({
+    this.isLoading = false,
+    this.currentStep = 0,
+    this.totalSteps = 60,
+    this.hasError = false,
+  });
 
-class AppLoadingState extends AppState {}
+  AppState copyWith({
+    bool? isLoading,
+    int? currentStep,
+    int? totalSteps,
+    bool? hasError,
+  }) {
+    return AppState(
+      isLoading: isLoading ?? this.isLoading,
+      currentStep: currentStep ?? this.currentStep,
+      totalSteps: totalSteps ?? this.totalSteps,
+      hasError: hasError ?? this.hasError,
+    );
+  }
 
-class AppLoadedState extends AppState {}
-
-class AppStartedEvent extends AppEvent {}
+  static const initial = AppState();
+}

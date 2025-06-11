@@ -1,4 +1,4 @@
-package com.example.daily_bite
+package com.dailyBite.app
 
 import io.flutter.embedding.android.FlutterActivity
 

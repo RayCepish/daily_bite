@@ -1,0 +1,2 @@
+F:/Projects/Dailybite/daily_bite/android/app/.cxx/Debug/4f2a465b/x86/CMakeFiles/edit_cache.dir
+F:/Projects/Dailybite/daily_bite/android/app/.cxx/Debug/4f2a465b/x86/CMakeFiles/rebuild_cache.dir

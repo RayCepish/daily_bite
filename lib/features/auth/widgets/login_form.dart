@@ -1,7 +1,6 @@
 import 'package:daily_bite/core/utils/text_field_validators.dart';
 import 'package:daily_bite/core/widgets/buttons/custom_button.dart';
-import 'package:daily_bite/core/widgets/buttons/google_button.dart';
-import 'package:daily_bite/core/widgets/buttons/text_button.dart';
+
 import 'package:daily_bite/core/widgets/text_fields/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -38,20 +37,20 @@ class LoginForm extends StatelessWidget {
             isPasswordField: true,
             textFieldValidator: TextFieldValidator.validatePassword,
           ),
-          const SizedBox(height: 16),
-          CustomTextButton(
-            text: 'Forgot Password?',
-            onTap: onTapForgotPassword,
-          ),
+          // const SizedBox(height: 16),
+          // CustomTextButton(
+          //   text: 'Forgot Password?',
+          //   onTap: onTapForgotPassword,
+          // ),
           const SizedBox(height: 16),
           CustomButton(
             text: "Continue",
             onPressed: onTapLogin,
           ),
-          const SizedBox(height: 16),
-          GoogleButton(
-            onTap: onTapLoginGoogle,
-          )
+          // const SizedBox(height: 16),
+          // GoogleButton(
+          //   onTap: onTapLoginGoogle,
+          // )
         ],
       ),
     );

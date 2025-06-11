@@ -2,36 +2,43 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
-  final Color? color;
-  final Color? textColor;
-  final VoidCallback onPressed;
+  final bool isEnabled;
+  final VoidCallback? onPressed;
 
   const CustomButton({
     required this.text,
-    this.color,
-    this.textColor,
     required this.onPressed,
+    this.isEnabled = true,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+
     return SizedBox(
       width: double.infinity,
       height: 50.0,
       child: ElevatedButton(
+        onPressed: () {
+          if (isEnabled) {
+            onPressed?.call();
+          }
+        },
         style: ElevatedButton.styleFrom(
+          backgroundColor: isEnabled
+              ? theme.colorScheme.primary
+              : theme.colorScheme.onSecondary,
           foregroundColor: theme.colorScheme.surface,
-          backgroundColor: theme.colorScheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0),
           ),
         ),
-        onPressed: onPressed,
         child: Text(
           text,
-          style: theme.textTheme.titleLarge,
+          style: theme.textTheme.titleLarge?.copyWith(
+            color: theme.colorScheme.onPrimary,
+          ),
         ),
       ),
     );

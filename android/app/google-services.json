@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "338657326091",
+    "project_id": "daily-bite-b8083",
+    "storage_bucket": "daily-bite-b8083.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338657326091:android:472778e2a5932d3b61830e",
+        "android_client_info": {
+          "package_name": "com.dailyBite.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338657326091-9aukgtcf1mhf017obmg6jimv3400rh7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dailyBite.app",
+            "certificate_hash": "528096ca32423e3d95e71ffac902535892f97ef9"
+          }
+        },
+        {
+          "client_id": "338657326091-3vk1o4qlmoht12dv0rnbn5njsvqo15b3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvwvWV_mR6KeBW-Epgb-rwW5L3f-tFz-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338657326091-3vk1o4qlmoht12dv0rnbn5njsvqo15b3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
