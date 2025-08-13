@@ -79,7 +79,6 @@ class AppInterceptor extends Interceptor {
       }
     }
 
-    // Якщо не вдалося оновити
     if (!_isLoggedOut) {
       _isLoggedOut = true;
       await _storage.delete(key: StorageKeys.authToken);

@@ -6,7 +6,6 @@ import 'package:daily_bite/core/widgets/donut_chart.dart';
 import 'package:daily_bite/core/widgets/main_layout.dart';
 import 'package:daily_bite/core/widgets/text_fields/custom_text_field.dart';
 import 'package:daily_bite/features/recipes_screen/bloc/recipes_screen_bloc.dart';
-// import 'package:daily_bite/features/recipes_screen/widgets/edit_recipe_button.dart';
 import 'package:daily_bite/features/recipes_screen/widgets/selected_ingredient_item.dart';
 import 'package:daily_bite/models/food_products/food_item_model.dart';
 import 'package:daily_bite/models/recipe_models/ingredients_model.dart';
@@ -89,15 +88,6 @@ class _RecipesScreenState extends State<RecipesScreen> {
                                 : 'Recipe Description',
                             fillColor: theme.colorScheme.primaryContainer,
                           ),
-                          // if (state.recipeId != null) ...[
-                          //   Align(
-                          //     alignment: Alignment.centerLeft,
-                          //     child: EditRecipeButton(
-                          //       preselectedItems: ingredients!,
-                          //     ),
-                          //   ),
-                          // ],
-                          // if (state.recipeId == null)
                           const SizedBox(height: 12),
                           Align(
                             alignment: Alignment.centerLeft,

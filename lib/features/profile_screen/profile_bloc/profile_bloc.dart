@@ -79,8 +79,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       await storage.delete(key: StorageKeys.authToken);
       await storage.delete(key: StorageKeys.refreshToken);
       await CachedNetworkImage.evictFromCache('');
-// getIt<ChatScreenBloc>().add(ClearChatEvent());
-
       await getIt<GoogleAuthService>().signOut();
 
       emit(ProfileState.initial);
